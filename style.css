@@ -36,18 +36,22 @@ body {
 }
 
 .paper.image {
-  padding: 10px;
-  width: 85vw;
+  padding: 15px;
+  width: auto;
+  max-width: 85vw;
 }
 
 .paper.image img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
 .paper.image p {
-  font-size: 30px;
+  font-size: 20px;
+  margin: 5px 0;
 }
 
 img {
@@ -86,16 +90,40 @@ p {
   ); /* Adjust this value between 0 and 1 to change the size */
 }
 
-@media (max-width: 768px) {
+.paper.red.smaller {
+  max-width: 85vw;
+  padding: 15px;
+}
+
+.paper.red.smaller .p1 {
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  margin-bottom: 15px;
+}
+
+.paper.red.smaller .p2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
   .paper {
-    transform: none !important;
+    position: relative;
+    margin: 20px auto;
+    transform: none;
   }
 
-  .smaller {
-    transform: scale(0.9) !important;
+  .paper.heart {
+    width: 150px;
+    height: 150px;
   }
 
-  p {
-    font-size: 18px;
+  .paper.image img {
+    max-height: 200px;
+  }
+
+  .paper.red.smaller {
+    transform: scale(1);
   }
 }
