@@ -49,15 +49,11 @@ class Paper {
         this.prevTouchX = this.touchMoveX;
         this.prevTouchY = this.touchMoveY;
 
-        paper.style.transform = `translate(calc(-50% + ${Math.min(
-          Math.max(this.currentPaperX, -window.innerWidth / 2),
-          window.innerWidth / 2
-        )}px), calc(-50% + ${Math.min(
-          Math.max(this.currentPaperY, -window.innerHeight / 2),
-          window.innerHeight / 2
-        )}px)) rotateZ(${this.rotation}deg) scale(${
-          paper.classList.contains("smaller") ? 0.8 : 1
-        })`;
+        paper.style.transform = `translateX(${
+          this.currentPaperX
+        }px) translateY(${this.currentPaperY}px) rotateZ(${
+          this.rotation
+        }deg) scale(${paper.classList.contains("smaller") ? 0.8 : 1})`;
       }
     });
 
